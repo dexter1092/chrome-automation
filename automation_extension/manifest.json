@@ -1,0 +1,25 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+  "name": "Automation ",
+  "version": "1.0",
+  "description": "Automation Extension",
+  "permissions": [
+    "tabs",
+    "storage","https://www.bgequickcheckup.com/*",
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "icons": ["hello_extensions.png"]
+  },
+ 
+  "content_scripts": [{
+	"run_at" : "document_start",
+    "css": ["styles.css"],
+    "js": ["jquery.js","t.js","bg.js"],
+    "matches": ["http://ec2-34-201-172-147.compute-1.amazonaws.com/*","https://www.bgequickcheckup.com/*","https://*.bgequickcheckup.com/*"]
+  }]
+ 
+}
