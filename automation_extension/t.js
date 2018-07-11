@@ -3,12 +3,15 @@ $(document).on('change','#campaign_current_status',function(){
 		var obj = {};
 		obj['campaign_start'] = 'y';
 		chrome.storage.local.set(obj);
-		
-		chrome.tabs.create({url:'https://www.bgequickcheckup.com/MainSearch.aspx'}, function(tab) {
-		});
-		chrome.tabs.executeScript(null, { 
-            code: "start();" 
-		});	
+		start();
+		// chrome.tabs.create({url:'https://www.bgequickcheckup.com/MainSearch.aspx'}, function(tab) {
+		// });
+
+		// let item = '5278890451'; 
+		// chrome.tabs.executeScript(null, {
+		// 	code:"start();"
+		// 	// code: "var item =['5278890451','4436280000'];item.forEach(function(item,index){start(item);})" 
+		// });	
 		
 	}
 	else
@@ -24,6 +27,11 @@ $(document).on('change','#campaign_current_status',function(){
 	}
 });
 
+chrome.storage.local.get('campaign_start', function(result){
+	if(result.campaign_start=='y') {
+		$('#campaign_current_status').prop('checked',true);
+	}
+})
 
 
 

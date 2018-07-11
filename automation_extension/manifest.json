@@ -7,7 +7,8 @@
   "description": "Automation Extension",
   "permissions": [
     "tabs",
-    "storage","https://www.bgequickcheckup.com/*",
+    "storage",
+    "https://www.bgequickcheckup.com/*",
     "activeTab"
   ],
   "browser_action": {
